@@ -1,3 +1,4 @@
+local G = require('G')
 vim.cmd [[packadd packer.nvim]]
 
 vim.cmd([[
@@ -22,6 +23,17 @@ return require('packer').startup(function(use)
     tag = 'nightly'
   }
   use 'sainnhe/everforest'
+
+  -- 浮动终端
+  require('vim-floaterm').config()
+  use { 'voldikss/vim-floaterm', config = "require('vim-floaterm').setup()" }
+  --  use 'voldikss/vim-floaterm'
+
+  -- fzf
+  require('fzf').config()
+  use { 'junegunn/fzf', event = "CmdLineEnter" }
+  use { 'junegunn/fzf.vim', config = "require('fzf').setup()", run = 'cd ~/.fzf && ./install --all', after = "fzf" }
+
 
   use 'rmagatti/alternate-toggler'
   use 'windwp/nvim-autopairs'
