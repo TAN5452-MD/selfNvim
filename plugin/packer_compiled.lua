@@ -187,6 +187,14 @@ _G.packer_plugins = {
     path = "/Users/lionaillen/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-foldsign"] = {
+    config = { 'require("nvim-foldsign").setup()' },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/lionaillen/.local/share/nvim/site/pack/packer/opt/nvim-foldsign",
+    url = "https://github.com/yaocccc/nvim-foldsign"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/lionaillen/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -310,6 +318,7 @@ vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
 vim.cmd [[au CmdLineEnter * ++once lua require("packer.load")({'fzf'}, { event = "CmdLineEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au CursorHold * ++once lua require("packer.load")({'nvim-foldsign'}, { event = "CursorHold *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 

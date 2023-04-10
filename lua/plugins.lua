@@ -34,6 +34,8 @@ return require('packer').startup(function(use)
   use { 'junegunn/fzf', event = "CmdLineEnter" }
   use { 'junegunn/fzf.vim', config = "require('fzf').setup()", run = 'cd ~/.fzf && ./install --all', after = "fzf" }
 
+  -- 显示折叠信息
+  use { 'yaocccc/nvim-foldsign', event = 'CursorHold', config = 'require("nvim-foldsign").setup()' }
 
   use 'rmagatti/alternate-toggler'
   use 'windwp/nvim-autopairs'
